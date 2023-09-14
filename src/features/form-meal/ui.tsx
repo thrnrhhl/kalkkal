@@ -37,13 +37,13 @@ export const FormMeal = () => {
                     />
                     <div className="flex gap-[10px] mt-[10px]">
                         <FieldTextInput
-                            label="Граммовка"
+                            label="Грамм"
                             type="number"
                             name="gram"
                             empty={!!values.gram}
                         />
                         <FieldTextInput
-                            label="Калорийность"
+                            label="Ккал"
                             type="number"
                             name="kcal"
                             empty={!!values.kcal}

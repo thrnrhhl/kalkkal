@@ -7,6 +7,7 @@ import { authOptions } from '../shared/lib';
 import { getServerSession } from 'next-auth';
 import { Header } from '../widgets/header';
 import Script from 'next/script';
+import favicon from './favicon.ico';
 
 export const metadata: Metadata = {
   title: 'Kalkulator Kkal',
@@ -43,7 +44,11 @@ export default async function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap"
           rel="stylesheet"
         />
-
+        <link
+          type="image/x-icon"
+          rel="shortcut icon"
+          href={favicon.src}
+        />
         {/* Yandex.Metrika counter */}
         <Script
           id="yandex-metrika"
