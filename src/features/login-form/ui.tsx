@@ -41,11 +41,12 @@ export const LoginForm = () => {
 
                     <FieldTextInput
                         label="Пароль"
+                        type="password"
                         name="pwd"
                         empty={!!values.pwd}
                     />
 
-                    <button className="h-[46px] w-full bg-[#152E37] rounded-[10px] text-[16px] text-[#fff]">
+                    <button className="h-[46px] w-full bg-[#152E37] rounded-[10px] text-sm text-[#fff]">
                         Авторизоваться
                     </button>
                 </Form>

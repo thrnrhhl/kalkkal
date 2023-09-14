@@ -1,11 +1,12 @@
 import './globals.css';
-import "react-loading-skeleton/dist/skeleton.css";;
+import "react-loading-skeleton/dist/skeleton.css";
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Providers } from './providers'
 import { authOptions } from '../shared/lib';
 import { getServerSession } from 'next-auth';
 import { Header } from '../widgets/header';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -42,6 +43,29 @@ export default async function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap"
           rel="stylesheet"
         />
+
+        {/* Yandex.Metrika counter */}
+        <Script
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function(m,e,t,r,i,k,a){m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+                      m[i].l=1*new Date();
+                      for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+              k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+                      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+                      ym(94951764, "init", {
+                        clickmap:true,
+                      trackLinks:true,
+                      accurateTrackBounce:true
+              });
+            `
+          }}
+        />
+
+        <noscript><div><img src="https://mc.yandex.ru/watch/94951764" style={{ position: 'absolute', left: -9999 }} alt="" /></div></noscript>
+        {/* /Yandex.Metrika counter */}
       </head>
       <body className="bg-[#f5f5f5]">
         <Providers session={session}>

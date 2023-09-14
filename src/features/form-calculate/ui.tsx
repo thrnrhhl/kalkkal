@@ -88,7 +88,7 @@ export const FormCalculate = () => {
             onSubmit={onSubmit}
             validationSchema={schema}
         >
-            {({ values, errors }) => (
+            {({ values, errors, touched }) => (
                 <Form className=" rounded-[10px] w-full flex flex-col gap-[15px] flex-shrink-0 lg:w-[450px]">
                     <div>
                         <div className="flex items-center gap-[0px] mb-[10px]">
@@ -105,7 +105,7 @@ export const FormCalculate = () => {
                             </label>
                         </fieldset>
 
-                        {errors.gender && (
+                        {(errors.gender && touched.gender) && (
                             <div className="text-xs flex items-center gap-[5px] w-full rounded-[8px] p-[5px] bg-[#ffb0b0] mt-[10px]">
                                 <Info className="w-4 h-4" />
                                 <ErrorMessage name="gender" />
@@ -137,7 +137,7 @@ export const FormCalculate = () => {
 
                         </div>
 
-                        {(errors.age || errors.height || errors.weight) && (
+                        {((errors.age || errors.height || errors.weight) && (touched.age || touched.height || touched.weight)) && (
                             <div className="text-xs flex items-center gap-[5px] w-full rounded-[8px] p-[5px] bg-[#ffb0b0] mt-[10px]">
                                 <Info className="w-4 h-4" />
                                 <ErrorMessage name="age" />
@@ -158,7 +158,7 @@ export const FormCalculate = () => {
                             </label>
                         </fieldset>
 
-                        {errors.formula && (
+                        {(errors.formula && touched.formula) && (
                             <div className="text-xs flex items-center gap-[5px] w-full rounded-[8px] p-[5px] bg-[#ffb0b0] mt-[10px]">
                                 <Info className="w-4 h-4" />
                                 <ErrorMessage name="formula" />
@@ -196,7 +196,7 @@ export const FormCalculate = () => {
                             </label>
                         </fieldset>
 
-                        {errors.physicalActivity && (
+                        {(errors.physicalActivity && touched.physicalActivity) && (
                             <div className="text-xs flex items-center gap-[5px] w-full rounded-[8px] p-[5px] bg-[#ffb0b0] mt-[10px]">
                                 <Info className="w-4 h-4" />
                                 <ErrorMessage name="physicalActivity" />
@@ -223,7 +223,7 @@ export const FormCalculate = () => {
                             </label>
                         </fieldset>
 
-                        {errors.target && (
+                        {(errors.target && touched.target) && (
                             <div className="text-xs flex items-center gap-[5px] w-full rounded-[8px] p-[5px] bg-[#ffb0b0] mt-[10px]">
                                 <Info className="w-4 h-4" />
                                 <ErrorMessage name="target" />

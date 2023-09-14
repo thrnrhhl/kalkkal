@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery, BaseQueryFn, FetchArgs, FetchBaseQueryError } from "@reduxjs/toolkit/query/react";
 
 const baseQuery = fetchBaseQuery({
-    baseUrl: "https://kalkkal.vercel.app/api",
+    baseUrl: `/api`,
     prepareHeaders: async (headers, { getState }) => {
         return headers;
     },
