@@ -24,22 +24,22 @@ export async function GET(req: Request) {
         
         const previosData = previousWeek.map((key) => {
 
-            let mealItem = previousMeals.find(item => {
+            let mealItem = previousMeals.find((item: any) => {
 
                 return item.date === moment(key).format('YYYY-MM-DD')
             });
             
             if(mealItem) {
-                return mealItem.records.reduce((acc, cur) => acc+cur, 0);
+                return mealItem.records.reduce((acc: number, cur: number) => acc+cur, 0);
             } else {
                 return 0
             }
         });
 
         const currentData = currentWeek.map((key) => {
-            let mealItem = currentMeals.find(item => item.date === moment(key).format('YYYY-MM-DD'));
+            let mealItem = currentMeals.find((item: any) => item.date === moment(key).format('YYYY-MM-DD'));
             if(mealItem) {
-                return mealItem.records.reduce((acc, cur) => acc+cur, 0);
+                return mealItem.records.reduce((acc: number, cur: number) => acc+cur, 0);
             } else {
                 return 0
             }

@@ -62,9 +62,8 @@ export const getWeekMealsQuery = async (dates: Date[]) => {
         });
 
 
-        return result;
+        return result as any;
     } catch(e) {
-        console.log(e);
         throw e;
     }
 }

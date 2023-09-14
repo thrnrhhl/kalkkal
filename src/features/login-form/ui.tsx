@@ -15,8 +15,6 @@ export const LoginForm = () => {
     const onSubmit = async (values: any) => {
         try {
             const payload = await loginQuery(values).unwrap();
-            console.log(values);
-
 
             await signIn('credentials', {
                 ...payload.data,

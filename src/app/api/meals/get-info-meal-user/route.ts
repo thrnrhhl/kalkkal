@@ -9,6 +9,7 @@ export async function GET(req: Request) {
         const session = await getServerSession(authOptions);
 
         const { currentWeek } = getDatesForCurrentAndPreviousWeeks();
+
         const today = new Date();
         today.setHours(0, 0, 0, 0);
 
@@ -59,10 +60,7 @@ export async function GET(req: Request) {
                 },
             ],
         });
-
-        console.log(weekMeals);
         
-
         const todayMeals = await prisma.meals.aggregateRaw({
             pipeline: [
                 {
@@ -102,14 +100,12 @@ export async function GET(req: Request) {
             ],
         });
 
-        console.log(weekMeals);
-        
             return NextResponse.json(
                 {
                     ok: 1, 
                     data: {
-                        today: todayMeals.reduce((acc, cur) => acc + cur.kcal, 0),
-                        week: weekMeals.reduce((acc, cur) => acc + cur.kcal, 0),
+                        today: (todayMeals as any).reduce((acc: number, cur: {kcal: number}) => acc + cur.kcal, 0),
+                        week: (weekMeals as any).reduce((acc: number, cur: {kcal: number}) => acc + cur.kcal, 0),
                     }
                 }, 
                 {status: 200}
