@@ -35,20 +35,21 @@ export const FormMeal = () => {
                         name="product"
                         empty={!!values.product}
                     />
-                    <div className="flex gap-[10px] mt-[10px]">
+                    <div className="grid grid-cols-2 lg:grid-cols-3 gap-[10px] mt-[10px]">
                         <FieldTextInput
-                            label="Грамм"
+                            label="Граммовка"
                             type="number"
                             name="gram"
                             empty={!!values.gram}
                         />
                         <FieldTextInput
-                            label="Ккал"
+                            label="Калорийность"
                             type="number"
                             name="kcal"
                             empty={!!values.kcal}
                         />
                         <FieldTextInput
+                            classNameContainer="col-span-2 lg:col-span-1"
                             label="Дата"
                             type="date"
                             name="date"
