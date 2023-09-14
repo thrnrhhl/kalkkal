@@ -7,7 +7,7 @@ export default function Page() {
         <main className="p-[16px] lg:flex flex-col justify-center items-center lg:h-[calc(100dvh-46px)]">
             <div className="flex flex-col items-center justify-between gap-[20px] lg:gap-[100px] lg:flex-row mt-[20px] lg:mt-0">
                 <div className="flex justify-center">
-                    <Image src={image2} alt="image2" width="500" height="500" className="w-[300px] h-[300px]" />
+                    <Image src={image2} alt="image2" width="500" height="500" className="w-[300px] h-[300px] lg:w-[500px] lg:h-[500px]" />
                 </div>
                 <div className="w-full lg:w-[400px] flex-shrink-0">
                     <h1 className="text-[30px] text-[#152E37] font-black mb-[20px]">Авторизация</h1>
