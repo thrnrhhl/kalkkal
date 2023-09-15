@@ -28,7 +28,7 @@ export default async function RootLayout({
       <head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Kalkulator Kkal</title>
+        <title>KalKkal</title>
         <meta name="description" content="Онлайн калькулятор калорий и учет приемов пищи. Следите за своим рационом и достигайте своих целей." />
         <meta name="keywords" content="калории, калькулятор, учет приемов пищи, здоровое питание" />
         <meta httpEquiv="Content-Language" content="ru" />
